@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <title>Mood Result</title>
+</head>
+<body class="container mt-5">
+  <h3>Your Mood Today: {{ mood }}</h3>
+  <p><strong>Your Entry:</strong></p>
+  <p>{{ entry }}</p>
+
+  {% if mood == 'Positive' %}
+    <p>😊 Keep it up! Here's a quote: "The best way to cheer yourself is to try to cheer someone else up."</p>
+  {% elif mood == 'Negative' %}
+    <p>😔 It's okay to feel low. Breathe, rest, and be kind to yourself.</p>
+  {% else %}
+    <p>😐 Neutral is a safe space. Stay mindful and take it slow.</p>
+  {% endif %}
+
+  <a href="/dashboard">View Mood Dashboard</a>
+</body>
+</html>
